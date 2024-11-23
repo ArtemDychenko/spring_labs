@@ -1,0 +1,64 @@
+### Create a new director
+POST http://localhost:8082/api/directors
+Content-Type: application/json
+
+{
+  "name": "Papa papa",
+  "yearOfBirth": 1957
+}
+
+### Get all directors
+GET http://localhost:8082/api/directors
+
+### Update a director
+PUT http://localhost:8082/api/directors/b10b60f1-3cec-423f-8c2e-8a2d3168401b
+Content-Type: application/json
+
+{
+  "name": "Terminator",
+  "yearOfBirth": 2123
+}
+
+### Delete a director
+DELETE http://localhost:8082/api/directors/6b2e417a-b14f-44e7-a581-9602b5050cc5
+
+
+
+### Create a new movie
+POST http://localhost:8082/api/movies
+Content-Type: application/json
+
+{
+  "name": "AAA",
+  "date_of_release": 2323,
+  "time": 111,
+  "genre": "Action Thriller",
+  "directorId": "d767dbb5-2f9b-41f7-a40e-bab5ec648b10"
+}
+
+### Get all movie
+GET http://localhost:8082/api/movies
+
+
+### Get movies by director
+GET http://localhost:8082/api/movies/director/d767dbb5-2f9b-41f7-a40e-bab5ec648b10
+
+
+
+
+### Update a movie
+PUT http://localhost:8082/api/movies/c8b0a845-1507-448b-86f7-601810c04912
+Content-Type: application/json
+
+{
+  "name": "Kill Bill",
+  "date_of_release": 2222,
+  "time": 111,
+  "genre": "Action Thriller",
+  "directorId": "fc45dcda-02c4-4fc6-8f37-f6298e094675"
+}
+
+### Delete a movie
+DELETE http://localhost:8082/api/movies/3a5e1e1f-b35b-4b9c-8b21-1fd8e6a42951
+
+
