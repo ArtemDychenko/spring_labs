@@ -1,0 +1,68 @@
+### Get all movies
+
+GET http://localhost:8082/api/movies
+
+### Get single movie
+
+GET http://localhost:8084/api/movies/711ffc83-1bef-4f35-bf5e-3b74d079986a
+
+### Get single movie, not existing
+
+GET http://localhost:8084/api/movies/3c6f1eb1-8069-44ab-988f-d7fed2b65d87
+
+### Get director movies
+
+GET http://localhost:8084/api/directors/5d1da2ae-6a14-4b6d-8b4f-d117867118d4/movies
+
+### Get director movies, not existing
+
+GET http://localhost:8084/api/directors/ac4e2683-b2ba-4695-94d9-806a97fce71e/movies
+
+### Create new movie
+
+PUT http://localhost:8084/api/movies/7951ef95-fff8-4432-9564-c3811760fe53
+Content-Type: application/json
+
+{
+  "name": "Kill Bill",
+  "date_of_release": 2222,
+  "time": 111,
+  "genre": "Action Thriller",
+  "director": "f5875513-bf7b-4ae1-b8a5-5b70a1b90e72"
+}
+
+###
+
+PUT http://localhost:8084/api/movies/3c6f1eb1-8069-44ab-988f-d7fed2b65d83
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "name": "Papa papa",
+  "date_of_release": 1957,
+  "time": 43434,
+  "genre":  "asfasf",
+  "director": "f5875513-bf7b-4ae1-b8a5-5b70a1b90e72"
+}
+
+
+
+### Delete movie.
+
+DELETE http://localhost:8084/api/movies/711ffc83-1bef-4f35-bf5e-3b74d079986a
+
+### Get all directors
+
+GET http://localhost:8084/api/directors
+
+### Get single director
+
+GET http://localhost:8084/api/directors/f5875513-bf7b-4ae1-b8a5-5b70a1b90e76
+
+### Get single director, not existing
+
+GET http://localhost:8084/api/directors/ac4e2683-b2ba-4695-94d9-806a97fce71e
+
+### Delete director
+
+DELETE http://localhost:8084/api/directors/5d1da2ae-6a14-4b6d-8b4f-d117867118d4
