@@ -18,7 +18,7 @@ public class PutMovieRequest {
 
     private String name;
 
-    private int date_of_release;
+    private int dateOfRelease;
 
     private  int time;
 

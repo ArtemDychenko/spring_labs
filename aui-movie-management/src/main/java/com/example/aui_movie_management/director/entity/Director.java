@@ -31,8 +31,8 @@ public class Director implements Serializable {
     @Id
     private UUID id;
 
-//    @Column(name = "name")
-//    private String name;
+    @Column(name = "name")
+    private String name;
 //
 //    @Column(name = "year_of_birth")
 //    private int yearOfBirth;

@@ -21,7 +21,7 @@ public class PatchMovieRequest {
 
     private String name;
 
-    private Integer date_of_release;
+    private Integer dateOfRelease;
 
     private Integer time;
 

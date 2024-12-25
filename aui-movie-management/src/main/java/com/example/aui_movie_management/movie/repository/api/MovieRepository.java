@@ -12,6 +12,10 @@ import java.util.UUID;
 
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, UUID> {
+
     List<Movie> findByGenre(String genre);
+
     List<Movie> findAllByDirector(Director director);
+
+    Optional<byte[]> findPosterById(UUID id);
 }

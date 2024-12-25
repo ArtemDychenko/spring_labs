@@ -17,7 +17,7 @@ public class MoviesToResponseFunction implements Function<List<Movie>, GetMovies
                         .map(movie -> GetMoviesResponse.Movie.builder()
                                 .id(movie.getId())
                                 .name(movie.getName())
-                                .date_of_release(movie.getDate_of_release())
+                                .dateOfRelease(movie.getDateOfRelease())
                                 .time(movie.getTime())
                                 .genre(movie.getGenre())
                                 .build())

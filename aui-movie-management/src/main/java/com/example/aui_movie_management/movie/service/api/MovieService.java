@@ -2,6 +2,7 @@ package com.example.aui_movie_management.movie.service.api;
 
 import com.example.aui_movie_management.movie.entity.Movie;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -20,4 +21,7 @@ public interface MovieService {
 
     Optional<List<Movie>> findAllByDirector(UUID directorId);
 
+    Optional<byte[]> findPoster(UUID id);
+
+    void updatePoster(UUID id, InputStream is);
 }

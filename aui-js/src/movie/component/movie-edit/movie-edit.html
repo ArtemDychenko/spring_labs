@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Movie web application"/>
+    <meta name="keywords" content="Movie Viewer"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simple RPG</title>
+    <link rel="stylesheet" href="./movie-edit.css"/>
+    <script type="module" src="./movie-edit.js" defer="defer"></script>
+
+    <!-- Font Awesome -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
+</head>
+<body>
+<div class="container">
+    <header class="mb-4 mt-4">
+        <h1>Movie Viewer</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../movie-list/movie-list.html">Movies</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="mb-4 mt-4">
+        <article class="text--justified">
+            <header><h2>Edit movie</h2></header>
+
+            <form class="container" data-submit="{onSubmit()}" data-reset="{onReset()}">
+                <div class="row">
+                    <div class="col-4 p-2">
+                        <div class="form-outline">
+                            <input id="name" data-value="{movie.name}" class="form-control"/>
+                            <label for="name" class="form-label">Name:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 p-2">
+                        <div class="form-outline">
+                            <input id="dateOfRelease" data-value="{movie.dateOfRelease}" class="form-control"/>
+                            <label for="dateOfRelease" class="form-label">Date of release:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 p-2">
+                        <div class="form-outline">
+                                    <textarea id="genre" data-text="{movie.genre}"
+                                              class="form-control" rows="4"></textarea>
+                            <label for="genre" class="form-label">Genre:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 p-2">
+                        <div class="form-outline">
+                            <input id="time" data-value="{movie.time}"
+                                   class="form-control"/>
+                            <label for="time" class="form-label">Time:</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-4 p-2">
+                        <fieldset>
+                            <legend class="form-label fs-6">Director:</legend>
+                            <div class="form-check" data-for="director : {directors.directors}">
+                                <label data-text="{director.name}">
+                                    <input type="radio" name="director"
+                                           data-selected-value="{movie.director}"
+                                           data-value="{director.id}"
+                                           class="form-check-input"/>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2 p-2 text-center">
+                        <button class="btn btn-primary" type="submit">Update</button>
+                    </div>
+                    <div class="col-2 p-2 text-center">
+                        <button class="btn btn-secondary" type="reset">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </article>
+    </main>
+
+    <footer class="text-center text-lg-start bg-light text-muted p-2">
+        <div class="text-center">
+            Footer
+        </div>
+
+    </footer>
+</div>
+</body>
+</html>

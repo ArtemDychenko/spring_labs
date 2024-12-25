@@ -15,11 +15,12 @@ public class MovieToResponseFunction implements Function<Movie, GetMovieResponse
         return GetMovieResponse.builder()
                 .id(entity.getId())
                 .name(entity.getName())
-                .date_of_release(entity.getDate_of_release())
+                .dateOfRelease(entity.getDateOfRelease())
                 .time(entity.getTime())
                 .genre(entity.getGenre())
                 .director(GetMovieResponse.Director.builder()
                         .id(entity.getDirector().getId())
+                        .name(entity.getDirector().getName())
                         .build())
                 .build();
     }

@@ -20,29 +20,28 @@ GET http://localhost:8084/api/directors/ac4e2683-b2ba-4695-94d9-806a97fce71e/mov
 
 ### Create new movie
 
-PUT http://localhost:8084/api/movies/7951ef95-fff8-4432-9564-c3811760fe53
+PUT http://localhost:8093/api/movies/84bb7ac3-ad32-427a-b32b-f78eb1d7c574
 Content-Type: application/json
 
 {
   "name": "Kill Bill",
-  "date_of_release": 2222,
+  "dateOfRelease": 2222,
   "time": 111,
   "genre": "Action Thriller",
-  "director": "f5875513-bf7b-4ae1-b8a5-5b70a1b90e72"
+  "director": "5d1da2ae-6a14-4b6d-8b4f-d117867118d4"
 }
 
 ###
 
-PUT http://localhost:8084/api/movies/3c6f1eb1-8069-44ab-988f-d7fed2b65d83
+PUT http://localhost:8093/api/movies/3c6f1eb1-8069-44ab-988f-d7fed2b65d83
 Content-Type: application/json
-Authorization: Basic a2V2aW46dXNlcnVzZXI=
 
 {
   "name": "Papa papa",
-  "date_of_release": 1957,
+  "dateOfRelease": 1957,
   "time": 43434,
   "genre":  "asfasf",
-  "director": "f5875513-bf7b-4ae1-b8a5-5b70a1b90e72"
+  "director": "f5875513-bf7b-4ae1-b8a5-5b70a1b90e76"
 }
 
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Movie web application"/>
+    <meta name="keywords" content="Movie View"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simple RPG</title>
+    <link rel="stylesheet" href="./movie-view.css"/>
+    <script type="module" src="./movie-view.js" defer="defer"></script>
+
+    <!-- Font Awesome -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
+</head>
+<body>
+<div class="container">
+    <header class="mb-4 mt-4">
+        <h1>Simple RPG</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../movie-list/movie-list.html">Movies</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="mb-4 mt-4">
+        <article class="text--justified">
+            <header><h2 data-text="{movie.name}"></h2></header>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                Director
+                            </div>
+                            <div class="col-6">
+                                <span data-text="{movie.director.name}"></span>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                Date of release
+                            </div>
+                            <div class="col-6">
+                                <span data-text="{movie.dateOfRelease}"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                Duration
+                            </div>
+                            <div class="col-6">
+                                <span data-text="{movie.time}"></span>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                Genre
+                            </div>
+                            <div class="col-6">
+                                <span data-text="{movie.genre}"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="poster col-5 text-end">
+                        <img alt="Movie poster" src="#" data-src="/api/movies/{movie.id}/poster" style="width: 300px; height: 450px;"/>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="text-center text-lg-start bg-light text-muted p-2">
+        <div class="text-center">
+            Footer
+        </div>
+    </footer>
+</div>
+</body>
+</html>

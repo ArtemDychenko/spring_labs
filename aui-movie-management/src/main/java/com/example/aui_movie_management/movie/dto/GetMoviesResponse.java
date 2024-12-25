@@ -25,7 +25,7 @@ public class GetMoviesResponse {
     public static class Movie {
         private UUID id;
         private String name;
-        private int date_of_release;
+        private int dateOfRelease;
         private int time;
         private String genre;
     }

@@ -7,6 +7,8 @@ import com.example.aui_movie_management.movie.service.api.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -16,7 +18,6 @@ public class MovieDefaultService implements MovieService {
     private final MovieRepository movieRepository;
     private final DirectorRepository directorRepository;
 
-    private final String directorServiceUrl = "http://localhost:8082/api/directors";
 
     @Autowired
     public MovieDefaultService(MovieRepository movieRepository, DirectorRepository directorRepository) {
@@ -25,30 +26,7 @@ public class MovieDefaultService implements MovieService {
 
     }
 
-//    @Transactional
-//    public void printAllMovies() {
-//        List<Movie> movies = movieRepository.findAll();
-//        movies.forEach(System.out::println);
-//    }
 
-//    @Transactional
-//    public Movie createMovie(String directorName, String name, int dateOfRelease, int time, String genre) {
-//        Director director = findDirectorByName(directorName);
-//
-//        if (director == null) {
-//            director = createDirector(new Director(directorName, 0));
-//        }
-//
-//        Movie movie = new Movie.Builder(name, dateOfRelease)
-//                .time(time)
-//                .genre(genre)
-//                .setDirector(director)
-//                .build();
-//        director.addMovie(movie);
-//
-//        return movieRepository.save(movie);
-//    }
-//
     @Override
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
@@ -83,6 +61,23 @@ public class MovieDefaultService implements MovieService {
     public Optional<List<Movie>> findAllByDirector(UUID directorId) {
         return directorRepository.findById(directorId)
                 .map(movieRepository::findAllByDirector);
+    }
+
+    @Override
+    public Optional<byte[]> findPoster(UUID id) {
+        return movieRepository.findPosterById(id);
+    }
+
+    @Override
+    public void updatePoster(UUID id, InputStream is) {
+        movieRepository.findById(id).ifPresent(movie -> {
+            try {
+                movie.setPoster(is.readAllBytes());
+                movieRepository.save(movie);
+            } catch (IOException ex) {
+                throw new IllegalStateException(ex);
+            }
+        });
     }
 
 

@@ -1,0 +1,6 @@
+.poster {
+    width: 90px;
+    height: 140px;
+    object-fit: cover;
+    object-position: 0 0;
+}

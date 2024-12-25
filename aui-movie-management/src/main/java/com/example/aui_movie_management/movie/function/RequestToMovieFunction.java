@@ -18,7 +18,7 @@ public class RequestToMovieFunction implements BiFunction<UUID, PutMovieRequest,
         return Movie.builder()
                 .id(id)
                 .name(request.getName())
-                .date_of_release(request.getDate_of_release())
+                .dateOfRelease(request.getDateOfRelease())
                 .time(request.getTime())
                 .genre(request.getGenre())
                 .director(Director.builder()
