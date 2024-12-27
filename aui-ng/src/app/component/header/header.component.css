@@ -1,0 +1,10 @@
+.header-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.header-link:hover {
+  color: #ffcccb;
+}

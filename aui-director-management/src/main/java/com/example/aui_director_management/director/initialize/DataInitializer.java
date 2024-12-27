@@ -53,10 +53,16 @@ public class DataInitializer {
                 .yearOfBirth(1963)
                 .build();
 
+        Director danielKwan = Director.builder()
+                .id(UUID.fromString("5d1da2ae-6a14-4b6d-8b4f-d11786712345"))
+                .name("Daniel Kwan")
+                .build();
+
 
         directorService.createDirector(christopherNolan);
         directorService.createDirector(yorgosLanthimos);
         directorService.createDirector(paoloSorrentino);
         directorService.createDirector(quentinTarantino);
+        directorService.createDirector(danielKwan);
     }
 }

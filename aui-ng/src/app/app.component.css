@@ -1,0 +1,47 @@
+/* Ogólne style dla całego dokumentu */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* Tło dla zawartości */
+  color: #333;
+}
+
+/* Styl kontenera głównego */
+div {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Styl nagłówka */
+app-header {
+  background-color: #d55236; /* Zielony kolor nagłówka */
+  color: white;
+  padding: 0px 0px 0px 10px;
+  text-align: left;
+  font-size: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Nagłówek zostaje na górze */
+  top: 0;
+  z-index: 1000;
+}
+
+
+/* Styl głównej zawartości */
+app-main {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Styl stopki */
+app-footer {
+  background-color: #000; /* Czarny kolor stopki */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  position: fixed; /* Przyklejona na dole */
+  width: 100%;
+  bottom: 0;
+}

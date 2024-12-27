@@ -1,0 +1,14 @@
+<article class="text--justified">
+
+  <div class="film-grid" *ngIf="movies">
+    <div class="film-card" *ngFor="let movie of movies.movies">
+      <a [routerLink]="['/movies', movie.id]">
+        <img
+          class="poster"
+          alt="Movie poster"
+          src="/api/movies/{{movie.id}}/poster"
+        />
+      </a>
+    </div>
+  </div>
+</article>

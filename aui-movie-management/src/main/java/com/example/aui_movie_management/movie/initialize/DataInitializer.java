@@ -57,11 +57,17 @@ public class DataInitializer {
                 .name("Quentin Tarantino")
                 .build();
 
+        Director danielKwan = Director.builder()
+                .id(UUID.fromString("5d1da2ae-6a14-4b6d-8b4f-d11786712345"))
+                .name("Daniel Kwan")
+                .build();
+
 
         directorService.createDirector(christopherNolan);
         directorService.createDirector(yorgosLanthimos);
         directorService.createDirector(paoloSorrentino);
         directorService.createDirector(quentinTarantino);
+        directorService.createDirector(danielKwan);
 
 
         Movie inception =  Movie.builder()
@@ -116,12 +122,45 @@ public class DataInitializer {
                 .poster(getResourceAsByteArray("/com/example/poster/theGreatBeauty.png"))
                 .build();
 
+        Movie everythingEverywhereAllAtOnce = Movie.builder()
+                .id(UUID.randomUUID())
+                .name("Everything Everywhere All at Once")
+                .dateOfRelease(2022)
+                .time(140)
+                .genre("Action/Adventure/Science Fiction")
+                .director(danielKwan)
+                .poster(getResourceAsByteArray("/com/example/poster/everythingEverywhere.png"))
+                .build();
+
+        Movie poorThings = Movie.builder()
+                .id(UUID.randomUUID())
+                .name("Poor Things")
+                .dateOfRelease(2023)
+                .time(142)
+                .genre("Comedy/Romance/Science Fiction")
+                .director(yorgosLanthimos)
+                .poster(getResourceAsByteArray("/com/example/poster/poorThings.png"))
+                .build();
+
+        Movie kindOfKindness = Movie.builder()
+                .id(UUID.randomUUID())
+                .name("Kind of kindness")
+                .dateOfRelease(2024)
+                .time(188)
+                .genre("Drama/Comedy")
+                .director(yorgosLanthimos)
+                .poster(getResourceAsByteArray("/com/example/poster/kindOfKindness.png"))
+                .build();
+
 
         movieService.createMovie(inception);
         movieService.createMovie(killBill);
         movieService.createMovie(theHandOfGod);
         movieService.createMovie(pulpFiction);
         movieService.createMovie(theGreatBeaty);
+        movieService.createMovie(everythingEverywhereAllAtOnce);
+        movieService.createMovie(poorThings);
+        movieService.createMovie(kindOfKindness);
     }
 
     @SneakyThrows

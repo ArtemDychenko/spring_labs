@@ -1,0 +1,37 @@
+<article *ngIf="movie" class="movie-details">
+  <header>
+    <h2>{{movie.name}}</h2>
+  </header>
+
+  <div class="details-container">
+    <!-- Poster on the left -->
+    <div class="poster">
+      <img alt="Movie poster" src="/api/movies/{{movie.id}}/poster" />
+    </div>
+
+    <!-- Movie details and actions on the right -->
+    <div class="info">
+      <div class="detail-row">
+        <span class="label">Director:</span>
+        <span class="value">{{movie.director.name}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Date of release:</span>
+        <span class="value">{{movie.dateOfRelease}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Duration:</span>
+        <span class="value">{{movie.time}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Genre:</span>
+        <span class="value">{{movie.genre}}</span>
+      </div>
+
+      <div class="film-actions">
+        <a [routerLink]="['/movies', movie.id, 'edit']" class="action-btn">Edit</a>
+        <button (click)="onDelete(movie)" class="action-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+</article>
