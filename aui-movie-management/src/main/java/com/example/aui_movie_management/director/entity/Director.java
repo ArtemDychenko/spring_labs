@@ -1,12 +1,7 @@
 package com.example.aui_movie_management.director.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,9 +28,15 @@ public class Director implements Serializable {
 
     @Column(name = "name")
     private String name;
-//
-//    @Column(name = "year_of_birth")
-//    private int yearOfBirth;
+
+    @Column(name = "year_of_birth")
+    private int yearOfBirth;
+
+    @ToString.Exclude
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    @EqualsAndHashCode.Exclude
+    private byte[] photo;
 
 //    public Optional<Object> map(DirectorToResponseFunction directorToResponse) {
 //    }
@@ -43,8 +44,8 @@ public class Director implements Serializable {
 //    @OneToMany(mappedBy = "director", cascade = CascadeType.ALL, orphanRemoval = true)
 //    private List<Movie> movies = new ArrayList<>();
 
-    @OneToMany(mappedBy = "director", cascade = CascadeType.REMOVE)
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private List<Movie> movies;
+//    @OneToMany(mappedBy = "director", cascade = CascadeType.REMOVE)
+//    @ToString.Exclude
+//    @EqualsAndHashCode.Exclude
+//    private List<Movie> movies;
 }

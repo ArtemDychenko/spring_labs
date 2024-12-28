@@ -1,0 +1,22 @@
+<article class="text--justified">
+
+  <div class="director-grid" *ngIf="directors">
+    <div class="director-card" *ngFor="let director of directors.directors">
+      <a [routerLink]="['/directors', director.id]">
+        <img
+          class="photo"
+          alt="Director photo"
+          src="/api/directors/{{director.id}}/photo"
+        />
+      </a>
+      <div class="director-details">
+        <div class="director-title">{{director.name}}</div>
+      </div>
+
+      <div class="director-actions">
+        <a [routerLink]="['/directors', director.id, 'add']" class="action-btn">Add</a>
+        <button (click)="onDelete(director)" class="action-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+</article>

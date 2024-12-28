@@ -17,13 +17,19 @@ div {
 app-header {
   background-color: #d55236; /* Zielony kolor nagłówka */
   color: white;
-  padding: 0px 0px 0px 10px;
+  padding: 0px 0px 0px 10px; /* Zmniejsz odstępy wewnętrzne */
   text-align: left;
-  font-size: 24px;
+  display: flex;
+  font-size: 18px; /* Zmniejsz rozmiar czcionki */
+  align-items: center; /* Wyśrodkowanie pionowe tekstu */
+  justify-content: space-between; /* Umożliwia wyrównanie elementów w poziomie */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 24px; /* Rozmiar czcionki */
   position: sticky; /* Nagłówek zostaje na górze */
   top: 0;
   z-index: 1000;
+  height: 60px; /* Zdefiniowana wysokość nagłówka */
+  line-height: 50px; /* Wyrównanie tekstu w pionie */
 }
 
 

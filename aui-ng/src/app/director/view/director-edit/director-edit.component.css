@@ -1,0 +1,129 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  font-size: 24px;
+  color: #f44336;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Article container */
+article {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+form.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.col-4 {
+  flex: 1 1 calc(33.333% - 15px);
+  min-width: 250px;
+}
+
+.col-2 {
+  flex: 1 1 calc(20% - 15px);
+  min-width: 120px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input, textarea, button, fieldset {
+  width: 100%;
+  font-size: 16px;
+  padding: 8px 12px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+/* Fieldset and legend */
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+
+}
+
+legend {
+  font-weight: bold;
+  font-size: 16px;
+  color: #555;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Reset button */
+button[type="button"] {
+  background-color: #555;
+}
+
+button[type="button"]:hover {
+  background-color: #333;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .col-4, .col-2 {
+    flex: 1 1 100%;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  textarea {
+    height: 60px;
+  }
+}

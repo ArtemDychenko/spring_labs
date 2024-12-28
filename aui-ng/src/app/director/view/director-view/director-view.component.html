@@ -1,0 +1,51 @@
+<article *ngIf="director" class="director-details">
+  <header>
+    <h2>{{director.name}}</h2>
+  </header>
+
+  <div class="details-container">
+    <!-- Poster on the left -->
+    <div class="photo">
+      <img alt="Director photo" src="/api/directors/{{director.id}}/photo" />
+    </div>
+
+    <!-- Movie details and actions on the right -->
+    <div class="info">
+      <div class="detail-row">
+        <span class="label">Name:</span>
+        <span class="value">{{director.name}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Year of birth:</span>
+        <span class="value">{{director.yearOfBirth}}</span>
+      </div>
+
+      <div class="director-actions">
+        <a [routerLink]="['/directors', director.id, 'edit']" class="action-btn">Edit</a>
+        <button (click)="onDelete(director)" class="action-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+
+
+  <section *ngIf="director.movies && director.movies.movies.length > 0" class="movies-list">
+    <h3>Movies</h3>
+    <ul>
+      <li *ngFor="let movie of director.movies.movies">
+        <a [routerLink]="['/movies', movie.id]">
+          <img
+            class="poster"
+            alt="Movie poster"
+            src="/api/movies/{{movie.id}}/poster"
+          />
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section *ngIf="!director.movies || director.movies.movies.length === 0" class="no-movies">
+    <p>No movies available for this director.</p>
+  </section>
+
+
+</article>

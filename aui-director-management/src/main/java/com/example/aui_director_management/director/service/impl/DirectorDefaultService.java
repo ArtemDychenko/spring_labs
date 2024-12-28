@@ -8,6 +8,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -46,6 +48,11 @@ public class DirectorDefaultService implements DirectorService {
          directorRepository.save(director);
     }
 
+    @Override
+    public void updateDirector(Director director) {
+        directorRepository.save(director);
+    }
+
 
     @Transactional
     public void deleteDirectorByName(String name) {
@@ -70,6 +77,25 @@ public class DirectorDefaultService implements DirectorService {
         }
         return directors;
     }
+
+
+    @Override
+    public Optional<byte[]> findPhoto(UUID id) {
+        return directorRepository.findPhotoById(id);
+    }
+
+    @Override
+    public void updatePhoto(UUID id, InputStream is) {
+        directorRepository.findById(id).ifPresent(director -> {
+            try {
+                director.setPhoto(is.readAllBytes());
+                directorRepository.save(director);
+            } catch (IOException ex) {
+                throw new IllegalStateException(ex);
+            }
+        });
+    }
+
 
 
 }

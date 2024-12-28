@@ -13,6 +13,10 @@ import { MovieService } from './movie/service/movie.service';
 import { MovieViewComponent } from './movie/view/movie-view/movie-view.component';
 import { MovieEditComponent } from './movie/view/movie-edit/movie-edit.component';
 import { FormsModule } from "@angular/forms";
+import {DirectorListComponent} from "./director/view/director-list/director-list.component";
+import {DirectorViewComponent} from "./director/view/director-view/director-view.component";
+import {DirectorEditComponent} from "./director/view/director-edit/director-edit.component";
+import {DirectorAddComponent} from "./director/view/director-add/director-add.component";
 
 /**
  * Application main module.
@@ -26,7 +30,11 @@ import { FormsModule } from "@angular/forms";
     MainComponent,
     MovieListComponent,
     MovieViewComponent,
-    MovieEditComponent
+    MovieEditComponent,
+    DirectorListComponent,
+    DirectorEditComponent,
+    DirectorViewComponent,
+    DirectorAddComponent
   ],
   imports: [
     BrowserModule,

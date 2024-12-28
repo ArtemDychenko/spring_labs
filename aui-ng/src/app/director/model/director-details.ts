@@ -1,4 +1,4 @@
-import { Movie } from "../../movie/model/movie";
+import {Movies} from "../../movie/model/movies";
 
 export interface DirectorDetails {
 
@@ -18,5 +18,5 @@ export interface DirectorDetails {
   yearOfBirth: number;
 
 
-  movies: Movie[];
+  movies: Movies;
 }

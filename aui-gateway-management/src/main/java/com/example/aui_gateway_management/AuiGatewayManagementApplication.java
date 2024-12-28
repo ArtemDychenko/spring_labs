@@ -29,15 +29,6 @@ public class AuiGatewayManagementApplication {
     ) {
         return builder
                 .routes()
-                .route("directors", route -> route
-                        .host(host)
-                        .and()
-                        .path(
-                                "/api/directors/{uuid}",
-                                "/api/directors"
-                        )
-                        .uri(directorURL)
-                )
                 .route("movies", route -> route
                         .host(host)
                         .and()
@@ -49,6 +40,17 @@ public class AuiGatewayManagementApplication {
                         )
                         .uri(movieURL)
                 )
+                .route("directors", route -> route
+                        .host(host)
+                        .and()
+                        .path(
+                                "/api/directors/{uuid}",
+                                "/api/directors",
+                                "/api/directors/**"
+                        )
+                        .uri(directorURL)
+                )
+
                 .build();
     }
 

@@ -4,6 +4,8 @@ import { Observable } from "rxjs";
 import { Directors } from "../model/directors";
 import { DirectorDetails } from "../model/director-details";
 import { DirectorForm } from "../model/director-form";
+import {Movie} from "../../movie/model/movie";
+import {Movies} from "../../movie/model/movies";
 
 
 @Injectable({
@@ -32,5 +34,12 @@ export class DirectorService {
   putDirector(uuid: string, request: DirectorForm): Observable<any> {
     return this.http.put('/api/directors/' + uuid, request);
   }
+
+  getDirectorMovies(uuid: string): Observable<Movies> {
+    return this.http.get<Movies>(`/api/directors/${uuid}/movies`);
+  }
+
+
+
 
 }

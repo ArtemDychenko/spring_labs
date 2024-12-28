@@ -46,7 +46,7 @@ public interface MovieController {
             UUID id
     );
 
-    @GetMapping(path = "api/movies/{id}/poster", produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping(path = "/api/movies/{id}/poster", produces = MediaType.IMAGE_PNG_VALUE)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     byte[] getMoviePoster(
