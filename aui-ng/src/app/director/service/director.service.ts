@@ -39,6 +39,11 @@ export class DirectorService {
     return this.http.get<Movies>(`/api/directors/${uuid}/movies`);
   }
 
+  // addDirector(director: DirectorForm): Observable<any> {
+  //   return this.http.post<void>('/api/directors', director);
+  // }
+
+
 
 
 

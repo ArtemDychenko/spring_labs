@@ -44,8 +44,8 @@ public class Director implements Serializable {
 //    @OneToMany(mappedBy = "director", cascade = CascadeType.ALL, orphanRemoval = true)
 //    private List<Movie> movies = new ArrayList<>();
 
-//    @OneToMany(mappedBy = "director", cascade = CascadeType.REMOVE)
-//    @ToString.Exclude
-//    @EqualsAndHashCode.Exclude
-//    private List<Movie> movies;
+    @OneToMany(mappedBy = "director", cascade = CascadeType.REMOVE)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private List<Movie> movies;
 }

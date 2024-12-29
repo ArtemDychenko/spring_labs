@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DirectorForm } from '../../model/director-form';
 //import { MovieService } from "../../../movie/service/movie.service";
 import { Directors } from "../../../director/model/directors";
+import {Movies} from "../../../movie/model/movies";
+import {MovieService} from "../../../movie/service/movie.service";
 
 @Component({
   selector: 'app-director-edit',
@@ -23,6 +25,8 @@ export class DirectorEditComponent implements OnInit {
   director: DirectorForm | undefined;
 
 
+  movies: Movies | undefined;
+
   /**
    * Available movies.
    */
@@ -36,6 +40,7 @@ export class DirectorEditComponent implements OnInit {
    */
   constructor(
     private directorService: DirectorService,
+    private movieService: MovieService,
     private route: ActivatedRoute,
     private router: Router
   ) {
@@ -46,13 +51,15 @@ export class DirectorEditComponent implements OnInit {
       this.directorService.getDirectors()
         .subscribe(directors => this.directors = directors);
 
+      this.movieService.getMovies()
+        .subscribe(movies => this.movies = movies);
+
       this.directorService.getDirector(params['uuid'])
         .subscribe(director => {
           this.uuid = director.id;
           this.director = {
             name: director.name,
             yearOfBirth: director.yearOfBirth,
-            // director: movie.director.id
           };
           this.director = {...this.director};
         });

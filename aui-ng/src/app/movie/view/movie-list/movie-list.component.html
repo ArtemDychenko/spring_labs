@@ -1,5 +1,10 @@
 <article class="text--justified">
 
+  <header class="movie-header">
+    <h2>Movies</h2>
+    <a [routerLink]="['/addMovie']" class="action-btn">Add</a>
+  </header>
+
   <div class="film-grid" *ngIf="movies">
     <div class="film-card" *ngFor="let movie of movies.movies">
       <a [routerLink]="['/movies', movie.id]">

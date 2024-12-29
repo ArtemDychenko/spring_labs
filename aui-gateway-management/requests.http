@@ -64,4 +64,4 @@ GET http://localhost:8084/api/directors/ac4e2683-b2ba-4695-94d9-806a97fce71e
 
 ### Delete director
 
-DELETE http://localhost:8084/api/directors/5d1da2ae-6a14-4b6d-8b4f-d117867118d4
+DELETE http://localhost:8093/api/directors/5d1da2ae-6a14-4b6d-8b4f-d117867118d4

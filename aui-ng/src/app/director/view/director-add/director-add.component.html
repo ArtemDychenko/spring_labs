@@ -1,12 +1,17 @@
-<article *ngIf="director">
-  <header><h2>Edit info about director</h2></header>
+<article>
+  <header><h2>Add a new director</h2></header>
 
-  <form class="container"  #form="ngForm" (ngSubmit)="onSubmit()">
+  <form class="container" #form="ngForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-4 p-2">
         <div>
           <label for="name">Name:</label>
-          <input id="name" name="name" [(ngModel)]="director.name"/>
+          <input
+            id="name"
+            name="name"
+            [(ngModel)]="newDirector.name"
+            required
+            placeholder="Enter director's name" />
         </div>
       </div>
     </div>
@@ -15,31 +20,23 @@
       <div class="col-4 p-2">
         <div>
           <label for="yearOfBirth">Year of birth:</label>
-          <input id="yearOfBirth" name="yearOfBirth" [(ngModel)]="director.yearOfBirth"/>
+          <input
+            id="yearOfBirth"
+            name="yearOfBirth"
+            [(ngModel)]="newDirector.yearOfBirth"
+            required
+            type="number"
+            placeholder="Enter year of birth" />
         </div>
       </div>
     </div>
 
-    <!--    <div class="row">-->
-    <!--      <div class="col-4 p-2">-->
-    <!--        <fieldset *ngIf="directors">-->
-    <!--          <legend>Profession:</legend>-->
-    <!--          <div *ngFor="let director of directors.directors">-->
-    <!--            <label>-->
-    <!--              <input type="radio" name="director" [(ngModel)]="movie.director" [value]="director.id"/>-->
-    <!--              {{director.name}}-->
-    <!--            </label>-->
-    <!--          </div>-->
-    <!--        </fieldset>-->
-    <!--      </div>-->
-    <!--    </div>-->
-
     <div class="row">
       <div class="col-2 p-2">
-        <button type="submit">Update</button>
+        <button type="submit">Add Director</button>
       </div>
       <div class="col-2 p-2">
-        <button type="button" (click)="form.resetForm(director)">Reset</button>
+        <button type="button" (click)="form.resetForm()">Reset</button>
       </div>
     </div>
   </form>

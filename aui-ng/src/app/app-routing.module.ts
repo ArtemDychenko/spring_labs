@@ -7,6 +7,7 @@ import { DirectorListComponent } from "./director/view/director-list/director-li
 import { DirectorViewComponent } from "./director/view/director-view/director-view.component";
 import { DirectorEditComponent } from "./director/view/director-edit/director-edit.component";
 import {DirectorAddComponent} from "./director/view/director-add/director-add.component";
+import {MovieAddComponent} from "./movie/view/movie-add/movie-add.component";
 
 /**
  * All available routes.
@@ -38,7 +39,11 @@ const routes: Routes = [
   },
   {
     component: DirectorAddComponent,
-    path: "directors/:uuid/add"
+    path: "addDirector"
+  },
+  {
+    component: MovieAddComponent,
+    path: "addMovie"
   }
 ];
 

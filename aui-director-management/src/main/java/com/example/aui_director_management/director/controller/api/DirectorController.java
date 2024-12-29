@@ -19,7 +19,6 @@ public interface DirectorController {
     @ResponseBody
     GetDirectorsResponse getDirectors();
 
-
     @GetMapping("/api/directors/{id}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody

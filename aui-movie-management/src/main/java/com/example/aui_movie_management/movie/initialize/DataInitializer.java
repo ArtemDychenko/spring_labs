@@ -45,7 +45,7 @@ public class DataInitializer {
                 .build();
 
         Director yorgosLanthimos = Director.builder()
-                .id(UUID.randomUUID())
+                .id(UUID.fromString("2d9b1e8c-67c5-4188-a911-5f064a612345"))
                 .name("Yorgos Lanthimos")
                 .yearOfBirth(1973)
                 .photo(getResourceAsByteArray("/com/example/photo/lathimos.png"))

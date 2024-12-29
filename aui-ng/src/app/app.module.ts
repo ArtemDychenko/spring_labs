@@ -17,6 +17,7 @@ import {DirectorListComponent} from "./director/view/director-list/director-list
 import {DirectorViewComponent} from "./director/view/director-view/director-view.component";
 import {DirectorEditComponent} from "./director/view/director-edit/director-edit.component";
 import {DirectorAddComponent} from "./director/view/director-add/director-add.component";
+import {MovieAddComponent} from "./movie/view/movie-add/movie-add.component";
 
 /**
  * Application main module.
@@ -34,7 +35,8 @@ import {DirectorAddComponent} from "./director/view/director-add/director-add.co
     DirectorListComponent,
     DirectorEditComponent,
     DirectorViewComponent,
-    DirectorAddComponent
+    DirectorAddComponent,
+    MovieAddComponent
   ],
   imports: [
     BrowserModule,

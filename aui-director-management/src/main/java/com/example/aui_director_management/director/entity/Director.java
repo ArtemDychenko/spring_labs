@@ -1,6 +1,6 @@
 package com.example.aui_director_management.director.entity;
 
-import com.example.aui_director_management.movie.entity.Movie;
+
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -37,11 +37,6 @@ public class Director implements Serializable {
     @EqualsAndHashCode.Exclude
     private byte[] photo;
 
-//    public Optional<Object> map(DirectorToResponseFunction directorToResponse) {
-//    }
-
-//    @OneToMany(mappedBy = "director", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<Movie> movies = new ArrayList<>();
 
 //    @OneToMany(mappedBy = "director", cascade = CascadeType.REMOVE)
 //    @ToString.Exclude

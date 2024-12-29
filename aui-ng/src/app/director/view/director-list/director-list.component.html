@@ -1,4 +1,8 @@
 <article class="text--justified">
+  <header class="director-header">
+    <h2>Directors</h2>
+    <a [routerLink]="['/addDirector']" class="action-btn">Add</a>
+  </header>
 
   <div class="director-grid" *ngIf="directors">
     <div class="director-card" *ngFor="let director of directors.directors">
@@ -12,11 +16,7 @@
       <div class="director-details">
         <div class="director-title">{{director.name}}</div>
       </div>
-
-      <div class="director-actions">
-        <a [routerLink]="['/directors', director.id, 'add']" class="action-btn">Add</a>
-        <button (click)="onDelete(director)" class="action-btn">Delete</button>
-      </div>
     </div>
   </div>
+
 </article>

@@ -2,37 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { DirectorService } from '../../service/director.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DirectorForm } from '../../model/director-form';
-//import { MovieService } from "../../../movie/service/movie.service";
-import { Directors } from "../../../director/model/directors";
+
 
 @Component({
   selector: 'app-director-add',
   templateUrl: './director-add.component.html',
   styleUrls: ['./director-add.component.css']
 })
-export class DirectorAddComponent implements OnInit {
+export class DirectorAddComponent implements OnInit  {
 
-  /**
-   * Movie's id.
-   */
+
   uuid: string | undefined;
 
   /**
-   * Single movie.
+   * New director to be added.
    */
-  director: DirectorForm | undefined;
-
+  newDirector: DirectorForm = {
+    name: '',
+    yearOfBirth: 0
+  };
 
   /**
-   * Available movies.
-   */
-  directors: Directors | undefined;
-
-  /**
-   * @param directorService movie service
-   * @param directorService director service
-   * @param route activated route
-   * @param router router
+   * @param directorService Service for managing directors
+   * @param router Angular router
    */
   constructor(
     private directorService: DirectorService,
@@ -42,27 +34,16 @@ export class DirectorAddComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.directorService.getDirectors()
-        .subscribe(directors => this.directors = directors);
-
-      this.directorService.getDirector(params['uuid'])
-        .subscribe(director => {
-          this.uuid = director.id;
-          this.director = {
-            name: director.name,
-            yearOfBirth: director.yearOfBirth,
-            // director: movie.director.id
-          };
-          this.director = {...this.director};
-        });
-    });
+    this.uuid = crypto.randomUUID();
   }
 
 
+
+  /**
+   * Submits the form to add a new director.
+   */
   onSubmit(): void {
-    this.directorService.putDirector(this.uuid!, this.director!)
+    this.directorService.putDirector(this.uuid!, this.newDirector!)
       .subscribe(() => this.router.navigate(['/directors']));
   }
-
 }

@@ -48,3 +48,33 @@
 .film-actions button:hover {
   background-color: #f40612;
 }
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  background-color: #ffffff;
+}
+
+.movie-header h2 {
+  color: #000000;
+  margin: 0;
+  font-size: 24px;
+}
+
+.movie-header .action-btn {
+  background-color: #f40612;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.movie-header .action-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}

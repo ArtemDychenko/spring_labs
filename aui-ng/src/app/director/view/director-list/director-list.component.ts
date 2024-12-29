@@ -24,5 +24,5 @@ export class DirectorListComponent implements OnInit{
   }
 
 
-
+  protected readonly crypto = crypto;
 }

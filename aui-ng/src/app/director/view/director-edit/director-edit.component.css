@@ -112,7 +112,7 @@ button[type="button"]:hover {
   background-color: #333;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
   .col-4, .col-2 {
     flex: 1 1 100%;

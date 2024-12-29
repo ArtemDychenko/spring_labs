@@ -1,0 +1,86 @@
+<article>
+  <header><h2>Add a new movie</h2></header>
+
+  <form class="container" #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="name">Name:</label>
+          <input
+            id="name"
+            name="name"
+            [(ngModel)]="newMovie.name"
+            required
+            placeholder="Enter movie's name" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="dateOfRelease">Date of release:</label>
+          <input
+            id="dateOfRelease"
+            name="dateOfRelease"
+            [(ngModel)]="newMovie.dateOfRelease"
+            required
+            type="number"
+            placeholder="Enter year of birth" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="genre">Genre:</label>
+          <input
+            id="genre"
+            name="genre"
+            [(ngModel)]="newMovie.genre"
+            required
+            placeholder="Enter genre of movie" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="time">Time:</label>
+          <input
+            id="time"
+            name="time"
+            [(ngModel)]="newMovie.time"
+            required
+            type="number"
+            placeholder="Enter duration of movie" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 p-2">
+        <fieldset *ngIf="directors">
+          <legend>Profession:</legend>
+          <div *ngFor="let director of directors.directors">
+            <label>
+              <input type="radio" name="director" [(ngModel)]="newMovie.director" [value]="director.id"/>
+              {{director.name}}
+            </label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2 p-2">
+        <button type="submit">Add Movie</button>
+      </div>
+      <div class="col-2 p-2">
+        <button type="button" (click)="form.resetForm()">Reset</button>
+      </div>
+    </div>
+  </form>
+</article>

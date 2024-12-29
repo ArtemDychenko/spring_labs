@@ -56,3 +56,33 @@
 .film-actions button:hover {
   background-color: #f40612;
 }
+
+.director-header {
+  display: flex;
+  justify-content: space-between; /* Przycisk po prawej, tytuł po lewej */
+  align-items: center; /* Wyrównanie w pionie */
+  padding: 0px;
+  background-color: #ffffff; /* Opcjonalnie można dodać tło nagłówka */
+}
+
+.director-header h2 {
+  color: #000000;
+  margin: 0;
+  font-size: 24px;
+}
+
+.director-header .action-btn {
+  background-color: #f40612; /* Zielony przycisk */
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.director-header .action-btn:hover {
+  background-color: #d32f2f; /* Jaśniejszy zielony po najechaniu */
+  transform: scale(1.05); /* Subtelne powiększenie */
+}

@@ -1,3 +1,4 @@
+import {Movies} from "../../movie/model/movies";
 
 export interface DirectorForm {
 
