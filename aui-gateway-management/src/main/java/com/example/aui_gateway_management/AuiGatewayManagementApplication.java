@@ -25,7 +25,7 @@ public class AuiGatewayManagementApplication {
             RouteLocatorBuilder builder,
             @Value("${rpg.movie.url}") String movieURL,
             @Value("${rpg.director.url}") String directorURL,
-            @Value("${rpg.gatewy.host}") String host
+            @Value("${rpg.gateway.host}") String host
     ) {
         return builder
                 .routes()

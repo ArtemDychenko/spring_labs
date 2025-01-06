@@ -30,29 +30,26 @@ public class DirectorDefaultService implements DirectorService {
         return directorRepository.findAll();
     }
 
-
-//    @Transactional
-//    public void printAllDirectors() {
-//        List<Director> director = directorRepository.findAll();
-//        director.forEach(System.out::println);
-//    }
+    //    @Transactional
+    //    public void printAllDirectors() {
+    //        List<Director> director = directorRepository.findAll();
+    //        director.forEach(System.out::println);
+    //    }
 
     @Override
     public Optional<Director> getDirectorById(UUID id) {
         return directorRepository.findById(id);
     }
 
-
     @Override
     public void createDirector(Director director) {
-         directorRepository.save(director);
+        directorRepository.save(director);
     }
 
     @Override
     public void updateDirector(Director director) {
         directorRepository.save(director);
     }
-
 
     @Transactional
     public void deleteDirectorByName(String name) {
@@ -78,7 +75,6 @@ public class DirectorDefaultService implements DirectorService {
         return directors;
     }
 
-
     @Override
     public Optional<byte[]> findPhoto(UUID id) {
         return directorRepository.findPhotoById(id);
@@ -95,7 +91,4 @@ public class DirectorDefaultService implements DirectorService {
             }
         });
     }
-
-
-
 }

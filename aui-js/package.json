@@ -1,6 +1,6 @@
 {
   "name": "@com.example/aui",
-  "version": "1.0.0-SNAPSHOT",
+  "version": "0.0.1-SNAPSHOT",
   "main": "index.js",
   "scripts": {
     "start": "http-server -p 8087 -c-1 -P http://localhost:8093 src",
