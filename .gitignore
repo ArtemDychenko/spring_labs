@@ -1,0 +1,22 @@
+# Systemowe pliki ukryte
+.DS_Store
+Thumbs.db
+
+# Pliki IDE
+/.idea/
+/*.iml
+*.swp
+
+# Maven
+/target/
+/pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+
+
+
+
