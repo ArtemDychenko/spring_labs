@@ -2,12 +2,24 @@ services:
   aui-movie-management:
     image: aui-movie-management:0.0.1-SNAPSHOT
     restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://aui-movie-db:3306/movie_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
+    depends_on:
+      - aui-movie-db
+
 
   aui-director-management:
     image: aui-director-management:0.0.1-SNAPSHOT
     restart: always
     environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://aui-director-db:3306/director_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
       RPG_MOVIE_URL: "http://aui-movie-management:8080"
+    depends_on:
+      - aui-director-db
 
   aui-gateway-management:
     image:  aui-gateway-management:0.0.1-SNAPSHOT
@@ -32,3 +44,27 @@ services:
       API_URL: http://aui-gateway-management:8080/api
     ports:
       - "8087:80"
+
+  aui-movie-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: movie_db
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - movie-db-data:/var/lib/mysql
+
+  aui-director-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: director_db
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3307:3306"
+    volumes:
+      - director-db-data:/var/lib/mysql
+
+volumes:
+  movie-db-data:
+  director-db-data:
